@@ -1,6 +1,6 @@
 # Getting Started with Create React App
 
-This project was built as part of the exercise given by [The Gym](https://www.thegym-rwanda.com/). 
+This project was built as part of series of React exercises given by [The Gym](https://www.thegym-rwanda.com/). 
 ## Instructions
 
 Build a react to-do app that performs basic tasks such as adding a to-do, marking it as completed, and deleting it.
