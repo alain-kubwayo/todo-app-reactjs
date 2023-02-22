@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# Basic Todo App
 
 This project was built as part of series of React exercises given by [The Gym](https://www.thegym-rwanda.com/). 
 ## Instructions

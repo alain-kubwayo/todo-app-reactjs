@@ -25,15 +25,21 @@ const Todos = () => {
                 addTodo={addTodo}
             />
             <div className="pt-10 text-3xl">
-                {todos?.map(todo => (
-                    <Todo 
-                        {...todo} 
-                        key={todo.id} 
-                        handleDelete={handleDelete}
-                        addTodo={addTodo}
-                        handleComplete={handleComplete}
-                    />
-                ))}
+                {
+                    todos.length > 0 ? (
+                        todos.map(todo => (
+                            <Todo 
+                                {...todo} 
+                                key={todo.id} 
+                                handleDelete={handleDelete}
+                                addTodo={addTodo}
+                                handleComplete={handleComplete}
+                            />
+                        ))
+                    ) : (
+                        <div className="text-sm font-bold text-center text-gray-500/60">You are all caught up 🏆</div>
+                    )
+                }
             </div>
         </>
     );

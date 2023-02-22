@@ -11,18 +11,21 @@ const Todo = ({ id, name, completed, handleDelete, handleComplete }) => {
     }
     
     return ( 
-        <label className="flex justify-between gap-y-6">
-            <div className="flex">
+        <label className="flex justify-between px-1 border-b border-gray-500/20 md:px-2 gap-y-6">
+            <div className="flex items-center">
                 <input 
                     type="checkbox" 
                     className="mr-2" 
                     name="isChecked"
                     onChange={handleChange}
                 />
-                <p className={completed ? 'line-through' : ''}>{ name }</p>
+                <p className={` font-semibold text-lg text-gray-500/70 ${completed ? 'line-through' : ''}`}>{ name }</p>
             </div>
             <button onClick={() => handleDelete(id)}>
-                <FontAwesomeIcon icon={faTrash} className="text-red-500" />
+                <FontAwesomeIcon 
+                    icon={faTrash} 
+                    className="text-xl text-red-500" 
+                />
             </button>
         </label>
         

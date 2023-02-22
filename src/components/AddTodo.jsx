@@ -9,9 +9,11 @@ const AddTodo = ({ addTodo }) => {
         id: '',
         name: '',
         completed: false
-    });
+    })
+    const [error, setError] = useState(false)
 
     const handleChange = e => {
+        setError(false)
         const { name, value } = e.target;
         setTodo({
             id: nanoid(),
@@ -22,11 +24,14 @@ const AddTodo = ({ addTodo }) => {
 
     const handleAdd = () => {
         if(todo.name !== ''){
+            setError(false)
             addTodo(todo);
             setTodo(prevTodo => ({
                 ...prevTodo,
                 name: ''
             }))
+        }else{
+            setError(true)
         }
     }
 
@@ -35,7 +40,7 @@ const AddTodo = ({ addTodo }) => {
             <input 
                 type="text" 
                 placeholder="Add todo..." 
-                className="w-full shadow-xl py-3 px-1.5 outline-none border broder-gray-100"
+                className={`w-full shadow-xl py-3 px-1.5 outline-none border-2 broder-gray-100 rounded-md ${error ? 'border-red-500' : 'border-gray-100'}`}
                 name="name"
                 value={todo.name}
                 onChange={handleChange}
