@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrash } from '@fortawesome/free-solid-svg-icons'
 import { useState } from 'react';
 
-const Todo = ({ id, name, completed, handleDelete, handleComplete }) => {
+const SingleTodo = ({ id, name, completed, handleDelete, handleComplete }) => {
     const [isChecked, setIsChecked] = useState(false);
 
     const handleChange = e => {
@@ -32,4 +32,4 @@ const Todo = ({ id, name, completed, handleDelete, handleComplete }) => {
     );
 }
  
-export default Todo;
+export default SingleTodo;
