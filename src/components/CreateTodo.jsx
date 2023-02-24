@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { nanoid } from 'nanoid';
 
 
-const AddTodo = ({ addTodo }) => {
+const CreateTodo = ({ addTodo }) => {
     const [todo, setTodo] = useState({
         id: '',
         name: '',
@@ -52,4 +52,4 @@ const AddTodo = ({ addTodo }) => {
      );
 }
  
-export default AddTodo;
+export default CreateTodo;

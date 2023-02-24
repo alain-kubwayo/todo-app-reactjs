@@ -1,5 +1,5 @@
 import { useState } from "react";
-import AddTodo from "./AddTodo";
+import CreateTodo from "./CreateTodo";
 import Todo from "./Todo";
 
 const Todos = () => {
@@ -21,7 +21,7 @@ const Todos = () => {
     
     return ( 
         <>
-            <AddTodo
+            <CreateTodo
                 addTodo={addTodo}
             />
             <div className="pt-10 text-3xl">
