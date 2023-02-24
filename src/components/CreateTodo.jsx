@@ -5,7 +5,7 @@ import { nanoid } from 'nanoid';
 
 
 const CreateTodo = ({ addTodo }) => {
-    const [todo, setTodo] = useState({
+    const [newTodo, setNewTodo] = useState({
         id: '',
         name: '',
         completed: false
@@ -15,7 +15,7 @@ const CreateTodo = ({ addTodo }) => {
     const handleChange = e => {
         setError(false)
         const { name, value } = e.target;
-        setTodo({
+        setNewTodo({
             id: nanoid(),
             [name]: value,
             completed: false,
@@ -23,11 +23,11 @@ const CreateTodo = ({ addTodo }) => {
     }
 
     const handleAdd = () => {
-        if(todo.name !== ''){
+        if(newTodo.name !== ''){
             setError(false)
-            addTodo(todo);
-            setTodo(prevTodo => ({
-                ...prevTodo,
+            addTodo(newTodo);
+            setNewTodo(prevNewTodo => ({
+                ...prevNewTodo,
                 name: ''
             }))
         }else{
@@ -42,7 +42,7 @@ const CreateTodo = ({ addTodo }) => {
                 placeholder="Add todo..." 
                 className={`w-full shadow-xl py-3 px-1.5 outline-none border-2 broder-gray-100 rounded-md ${error ? 'border-red-500' : 'border-gray-100'}`}
                 name="name"
-                value={todo.name}
+                value={newTodo.name}
                 onChange={handleChange}
             />
             <button className="absolute right-[1%] top-1/4" onClick={handleAdd}>
